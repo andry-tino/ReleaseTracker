@@ -5,8 +5,8 @@
 (function() {
   var fs = require("fs");
   var path = require("path");
-  var glob = require("glob").sync;
-  var execFile = require("child_process").execFileSync;
+  var exec = require("child_process").execSync;
+  
   var tsc = require("typescript");
   var sass = require("sass");
   
@@ -20,10 +20,6 @@
     console.log("Building...");
     compile();
     
-    // Move output files from src to out
-    console.log("Moving output files...");
-    moveOutputFiles();
-    
     console.log("Build done!");
   });
   
@@ -34,12 +30,19 @@
     console.log("Cleaning up output folder...");
     
     // TODO
-    tsc.transpile("input", {}, "fileName");
 
     console.log("Cleanup done!");
   });
   
   function compile() {
-    console.log("Compilation done!");
+    var compiler = "tsc.js";
+    var node = "node";
+    var execPath = path.join(
+        "node_modules", 
+        "typescript", 
+        "lib", 
+        compiler);
+    
+    exec(node + " " + execPath + " " + "--project src");
   }
 })();

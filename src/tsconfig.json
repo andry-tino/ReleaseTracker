@@ -1,10 +1,10 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "removeComments": true,
         "preserveConstEnums": true,
-        "outFile": "../out/releasetracker.js",
+        "outDir": "../out/",
         "sourceMap": true
     },
     "files": [
