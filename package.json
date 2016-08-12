@@ -1,0 +1,30 @@
+{
+  "name": "release-tracker",
+  "version": "1.0.0",
+  "description": "Predictive release tracker",
+  "main": "index.js",
+  "dependencies": {
+    "angular2": "^2.0.0-beta.17",
+    "jake": "^8.0.12",
+    "typescript": "^1.8.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andry-tino/ReleaseTracker.git"
+  },
+  "keywords": [
+    "track",
+    "release",
+    "repository"
+  ],
+  "author": "Andrea Tino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andry-tino/ReleaseTracker/issues"
+  },
+  "homepage": "https://github.com/andry-tino/ReleaseTracker#readme"
+}
