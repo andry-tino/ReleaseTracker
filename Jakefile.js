@@ -6,7 +6,7 @@
   var fs = require("fs");
   var path = require("path");
   var exec = require("child_process").execSync;
-  
+
   var tsc = require("typescript");
   var sass = require("sass");
   
@@ -18,7 +18,12 @@
   desc("Builds the project and all source files.");
   task("default", function() {
     console.log("Building...");
+
+    // Compile to out folder
     compile();
+
+    // Copy remaining files to out folder
+    fs.createReadStream('src/index.html').pipe(fs.createWriteStream('out/index.html'));
     
     console.log("Build done!");
   });
