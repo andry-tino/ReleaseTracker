@@ -1,0 +1,19 @@
+///
+/// _fonts.scss
+/// Andrea Tino - 2016 
+///
+
+// Available font family names
+$fontfamily-name-abel:          abel, sans-serif;
+$fontfamily-name-advent-pro:    advent-pro, sans-serif;
+$fontfamily-name-adamina:       adamina, serif;
+$fontfamily-name-ubuntu-mono:   ubuntu-mono, sans-serif;
+
+// Headings
+$font-title:            36pt $fontfamily-name-adamina;
+$font-heading1:         24pt $fontfamily-name-abel;
+$font-heading2:         18pt $fontfamily-name-abel;
+
+// Text
+$font-text-plain:       12pt $fontfamily-name-ubuntu-mono;
+$font-text-emphasis:    12pt $fontfamily-name-ubuntu-mono;

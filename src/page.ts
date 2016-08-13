@@ -4,6 +4,7 @@
  */
 
 /// <reference path="control.ts" />
+/// <reference path="style/cssClassNames.ts" />
 
 namespace ReleaseTracker {
     export class Page implements Control {
@@ -43,7 +44,7 @@ namespace ReleaseTracker {
             var loaderScript = this.createChartLoaderScriptElement();
             this.document.head.appendChild(loaderScript);
 
-            var root = this.createContentElement();
+            var root = this.createRootElement();
             this.document.body.appendChild(root);
         }
 
@@ -55,11 +56,35 @@ namespace ReleaseTracker {
             return includeScript;
         }
 
-        private createContentElement(): Element {
+        private createRootElement(): Element {
             var root = this.createElement("div");
-            root.classList.add();
+            root.classList.add(Style.CssClassNames.root);
+
+            var header = this.createHeaderElement();
+
+            var content = this.createElement("div");
+            content.classList.add(Style.CssClassNames.content);
+
+            root.appendChild(header);
+            root.appendChild(content);
 
             return root;
+        }
+
+        private createHeaderElement() {
+            var header = this.createElement("div");
+            header.classList.add(Style.CssClassNames.header);
+
+            var content = this.createElement("div");
+            content.classList.add(Style.CssClassNames.content);
+
+            var footer = this.createElement("div");
+            footer.classList.add(Style.CssClassNames.footer);
+
+            header.appendChild(content);
+            header.appendChild(footer);
+
+            return header;
         }
 
         private createElement(tagName): Element {

@@ -11,21 +11,21 @@ namespace ReleaseTracker.Style {
         /**
          * Gets the name of class for the root element.
          */
-        public get root(): string { return "root"; }
+        public static get root(): string { return "root"; }
 
         /**
          * Gets the name of class for the content element.
          */
-        public get content(): string { return "content"; }
+        public static  get content(): string { return "content"; }
 
         /**
          * Gets the name of class for the header element.
          */
-        public get header(): string { return "header"; }
+        public static get header(): string { return "header"; }
 
         /**
          * Gets the name of class for the footer element.
          */
-        public get footer(): string { return "footer"; }
+        public static get footer(): string { return "footer"; }
     }
 }
