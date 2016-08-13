@@ -57,6 +57,7 @@ namespace ReleaseTracker {
 
         private createContentElement(): Element {
             var root = this.createElement("div");
+            root.classList.add();
 
             return root;
         }

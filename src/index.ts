@@ -9,12 +9,21 @@
 
 namespace ReleaseTracker {
     export class Application {
+        private packages = [
+            "corechart", 
+            "controls"
+        ];
+
         public run() {
             var page = new Page(document);
             page.render();
 
-            google.charts.load('current', { packages: ['corechart', 'controls'] });
-            google.charts.setOnLoadCallback(null);
+            google.charts.load('current', { packages: this.packages });
+            google.charts.setOnLoadCallback(this.runCore);
+        }
+
+        private runCore() {
+            // Chart libraries have been called, can use charts here
         }
     }
 }
