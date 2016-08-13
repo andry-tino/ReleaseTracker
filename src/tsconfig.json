@@ -1,11 +1,10 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "commonjs",
         "noImplicitAny": false,
         "removeComments": true,
         "preserveConstEnums": true,
-        "outDir": "../out/",
+        "outFile": "../out/index.js",
         "sourceMap": true
     },
     "files": [

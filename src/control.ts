@@ -14,6 +14,13 @@ namespace ReleaseTracker {
         element: Element;
 
         /**
+         * Gets a value indicating whether the control 
+         * has been rendered or not. If the control has not 
+         * been rendered, then 'element' is null.
+         */
+        rendered: boolean;
+
+        /**
          * Renders the control.
          */
         render(): void;
