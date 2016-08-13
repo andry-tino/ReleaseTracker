@@ -3,7 +3,7 @@
  * Andrea Tino - 2016
  */
 
-/// <reference path="definitions/googleCharts.d.ts" />
+/// <reference path="definitions/google-visualization.d.ts" />
 
 /// <reference path="page.ts" />
 
@@ -12,10 +12,13 @@ namespace ReleaseTracker {
         public run() {
             var page = new Page(document);
             page.render();
+
+            google.charts.load('current', { packages: ['corechart', 'controls'] });
+            google.charts.setOnLoadCallback(null);
         }
     }
 }
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     new ReleaseTracker.Application().run();
 });
