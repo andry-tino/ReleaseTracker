@@ -24,6 +24,11 @@ namespace ReleaseTracker.Style {
         public static get header(): string { return "header"; }
 
         /**
+         * Gets the name of class for the title element.
+         */
+        public static get title(): string { return "title"; }
+
+        /**
          * Gets the name of class for the footer element.
          */
         public static get footer(): string { return "footer"; }

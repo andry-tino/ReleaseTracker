@@ -1,0 +1,15 @@
+///
+/// _title.scss
+/// Andrea Tino - 2016 
+///
+
+$title-margin-bottom: 10px;
+
+.root {
+    .header.content {
+        .title {
+            font: $font-title;
+            margin: $title-margin-bottom 0;
+        }
+    }
+}

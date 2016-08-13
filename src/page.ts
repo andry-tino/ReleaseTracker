@@ -71,7 +71,7 @@ namespace ReleaseTracker {
             return root;
         }
 
-        private createHeaderElement() {
+        private createHeaderElement(): Element {
             var header = this.createElement("div");
             header.classList.add(Style.CssClassNames.header);
 
@@ -85,6 +85,15 @@ namespace ReleaseTracker {
             header.appendChild(footer);
 
             return header;
+        }
+
+        private createHeaderTitle(): Element {
+            var title = this.createElement("div");
+            title.classList.add(Style.CssClassNames.title);
+
+            title.textContent = "ReleaseTracker";
+
+            return title;
         }
 
         private createElement(tagName): Element {
