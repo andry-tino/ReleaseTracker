@@ -14,7 +14,7 @@ namespace ReleaseTracker {
         private document: Document;
         private _element: Element;
 
-        public constructor(document: Document) {
+        constructor(document: Document) {
             if (!document) {
                 throw "Parameter 'document' cannot be null or undefined!";
             }

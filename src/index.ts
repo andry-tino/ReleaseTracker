@@ -8,12 +8,26 @@
 /// <reference path="page.ts" />
 
 namespace ReleaseTracker {
-    export class Application {
+    class Kernel {
+        private document: Document;
+
         private packages = [
-            "corechart", 
+            "corechart",
             "controls"
         ];
 
+        /**
+         * Initializes a new instance of the Kernel class.
+         */
+        constructor(document: Document) {
+            if (!document) {
+                throw "Argument 'document' cannot be null or undefined!";
+            }
+        }
+
+        /**
+         * Runs the kernel.
+         */
         public run() {
             var page = new Page(document);
             page.render();
@@ -26,8 +40,26 @@ namespace ReleaseTracker {
             // Chart libraries have been called, can use charts here
         }
     }
+
+    /**
+     * Entry point.
+     */
+    export class Application {
+        private static kernekInstance: Kernel;
+
+        /**
+         * Gets the singleton instance of the kernel.
+         */
+        public static get kernel(): Kernel {
+            if (!Application.kernekInstance) {
+                Application.kernekInstance = new Kernel(document);
+            }
+
+            return Application.kernekInstance;
+        }
+    }
 }
 
 window.addEventListener("load", function () {
-    new ReleaseTracker.Application().run();
+    ReleaseTracker.Application.kernel.run();
 });
