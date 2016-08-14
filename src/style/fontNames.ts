@@ -12,7 +12,7 @@ namespace ReleaseTracker.Style {
          * Gets the name of class for the root element.
          */
         public static get fontLoadSrc(): string { 
-            return "//use.edgefonts.net/abel:n4;advent-pro;adamina;ubuntu-mono.js"; 
+            return "https://use.edgefonts.net/abel:n4;advent-pro;adamina;ubuntu-mono;pontano-sans;cookie.js"; 
         }
     }
 }

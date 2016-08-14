@@ -121,8 +121,6 @@ namespace ReleaseTracker {
             var title = this.createElement("div");
             title.classList.add(Style.CssClassNames.title);
 
-            title.textContent = "ReleaseTracker";
-
             return title;
         }
 

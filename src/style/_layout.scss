@@ -3,28 +3,26 @@
 /// Andrea Tino - 2016 
 ///
 
+$header-padding: 3px 10px;
+
 html {
-    height: 100%;
-    
     body {
-        height: 100%;
         margin: 0;
         padding: 0;
     }
 }
 
 .root {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    // Horizontal layout
-    height: 100%;
+    flex-direction: column;
 
     .header {
         flex: 0 0 auto;
         display: flex;
-        flex-direction: column;
-        height: 100%;
-        background-color: $color-brand-dark;
+        flex-direction: row;
+        padding: $header-padding;
+        background-color: $color-brand-grafite;
 
         .content {
             flex: 1 1 auto;

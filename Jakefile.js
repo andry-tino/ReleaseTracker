@@ -47,6 +47,26 @@
         console.log("Build done!");
     });
 
+    // Compile browser-------------------------------------------
+    desc("Builds the project browser side and all source files.");
+    task("browser", function () {
+        console.log("Building browser side...");
+
+        // 1. Compile TS files
+        console.log("Compiling browser-side...");
+        compileBrowser();
+
+        // 2. Compile SASS files
+        console.log("Compiling SASS files...");
+        compileSass();
+
+        // 3. Copy remaining files to out folder
+        console.log("Copying static artifacts...");
+        copyStaticArtifacts();
+
+        console.log("Build done!");
+    });
+
     // Cleanup -------------------------------------------------------------
     desc("Removes output files from source locations and cleans up folders");
     task("cleanup", function () {
