@@ -6,10 +6,11 @@
 $title-margin-bottom: 10px;
 
 .root {
-    .header.content {
+    .header .content {
         .title {
             font: $font-title;
             margin: $title-margin-bottom 0;
+            color: $color-brand-white;
         }
     }
 }

@@ -5,6 +5,7 @@
 
 /// <reference path="control.ts" />
 /// <reference path="style/cssClassNames.ts" />
+/// <reference path="style/fontNames.ts" />
 
 namespace ReleaseTracker {
     export class Page implements Control {
@@ -41,8 +42,17 @@ namespace ReleaseTracker {
          * Renders the control.
          */
         public render() {
-            var loaderScript = this.createChartLoaderScriptElement();
-            this.document.head.appendChild(loaderScript);
+            // Render font load script
+            var fontLoaderScript = this.createFontsLoaderScriptElement();
+            this.document.head.appendChild(fontLoaderScript);
+
+            // Render link for our CSS
+            var styleLink = this.createStyleLinkElement();
+            this.document.head.appendChild(styleLink);
+
+            // Render chart load script
+            var chartLoaderScript = this.createChartLoaderScriptElement();
+            this.document.head.appendChild(chartLoaderScript);
 
             var root = this.createRootElement();
             this.document.body.appendChild(root);
@@ -54,6 +64,23 @@ namespace ReleaseTracker {
             includeScript.src = this.GoogleChartLoaderUrl;
 
             return includeScript;
+        }
+
+        private createFontsLoaderScriptElement(): Element {
+            var includeScript = <HTMLScriptElement>this.createElement("script");
+            includeScript.type = "text/javascript";
+            includeScript.src = Style.FontNames.fontLoadSrc;
+
+            return includeScript;
+        }
+
+        private createStyleLinkElement(): Element {
+            var style = <HTMLLinkElement>this.createElement("link");
+            style.type = "text/css";
+            style.rel = "stylesheet";
+            style.href = "style.css";
+
+            return style;
         }
 
         private createRootElement(): Element {
@@ -77,6 +104,9 @@ namespace ReleaseTracker {
 
             var content = this.createElement("div");
             content.classList.add(Style.CssClassNames.content);
+
+            var title = this.createHeaderTitle();
+            content.appendChild(title);
 
             var footer = this.createElement("div");
             footer.classList.add(Style.CssClassNames.footer);

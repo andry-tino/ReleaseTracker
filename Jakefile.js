@@ -13,6 +13,15 @@
     // Platform
     var platform = process.platform;
 
+    // Utils
+    var compiler = "tsc.js";
+    var node = "node";
+    var compilerExecPath = path.join(
+        "node_modules",
+        "typescript",
+        "lib",
+        compiler);
+
     // Tasks
     // Compile -------------------------------------
     desc("Builds the project and all source files.");
@@ -20,14 +29,18 @@
         console.log("Building...");
 
         // 1. Compile TS files
-        console.log("Compiling TypeScript files...");
-        compileTs();
+        console.log("Compiling browser-side...");
+        compileBrowser();
 
-        // 2. Compile SASS files
+        // 2. Compile TS files
+        console.log("Compiling server-side...");
+        compileServer();
+
+        // 3. Compile SASS files
         console.log("Compiling SASS files...");
         compileSass();
 
-        // 2. Copy remaining files to out folder
+        // 4. Copy remaining files to out folder
         console.log("Copying static artifacts...");
         copyStaticArtifacts();
 
@@ -44,16 +57,12 @@
         console.log("Cleanup done!");
     });
 
-    function compileTs() {
-        var compiler = "tsc.js";
-        var node = "node";
-        var execPath = path.join(
-            "node_modules",
-            "typescript",
-            "lib",
-            compiler);
+    function compileBrowser() {
+        exec(node + " " + compilerExecPath + " " + "--project src");
+    }
 
-        exec(node + " " + execPath + " " + "--project src");
+    function compileServer() {
+        exec(node + " " + compilerExecPath + " " + "--project src/server");
     }
 
     function compileSass() {
