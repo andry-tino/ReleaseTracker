@@ -22,7 +22,7 @@ html {
         display: flex;
         flex-direction: row;
         padding: $header-padding;
-        background-color: $color-brand-grafite;
+        background: linear-gradient(180deg, $color-header-light 0%, $color-header-dark 100%);
 
         .content {
             flex: 1 1 auto;
@@ -35,5 +35,7 @@ html {
 
     .content {
         flex: 1 1 auto;
+        display: flex;
+        flex-wrap: wrap;
     }
 }

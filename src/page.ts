@@ -15,6 +15,9 @@ namespace ReleaseTracker {
         private document: Document;
         private _element: Element;
 
+        /**
+         * Initializes a new instance of the Page class.
+         */
         constructor(document: Document) {
             if (!document) {
                 throw "Parameter 'document' cannot be null or undefined!";
@@ -27,7 +30,7 @@ namespace ReleaseTracker {
          * Gets the element which has been rendered.
          */
         public get element(): Element {
-            return this.element;
+            return this._element;
         }
 
         /**
